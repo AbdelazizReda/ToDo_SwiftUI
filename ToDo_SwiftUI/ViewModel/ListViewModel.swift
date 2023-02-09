@@ -17,10 +17,7 @@ class ListViewModel : ObservableObject{
     }
     func getItems(){
         
-        let newItems = [ItemModel(id: "2", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
-                        ItemModel(id: "1", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
-                        ItemModel(id: "3", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: false),
-                        ItemModel(id: "6", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true)]
+        let newItems = [ItemModel(id: "2", activitey: " I am a student I have to lead my life into a certain time slot to maintain all my daily activities", isCompleted: true)]
         
         items.append(contentsOf: newItems)
         

@@ -22,6 +22,13 @@ struct ListView: View {
         List{
             ForEach(listViewModel.items) { item in
                 ListRowView(items: item)
+                    .onTapGesture {
+                        withAnimation {
+                            print("hello")
+                        }
+                            
+                    
+                    }
             }
             //delete item
             .onDelete(perform: listViewModel.deleteItem)
@@ -29,8 +36,8 @@ struct ListView: View {
         }
         .listStyle(PlainListStyle())
         //navigationConfugiers
-        .navigationTitle("Your List !")
-        .navigationBarItems(leading: EditButton(), trailing: NavigationLink("add", destination: AddView()))
+        .navigationTitle("Your List")
+        .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: AddView()))
     }
     
     

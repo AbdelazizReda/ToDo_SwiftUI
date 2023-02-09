@@ -12,6 +12,10 @@ struct AddView: View {
     @Environment(\.presentationMode) var presentationModel
     @EnvironmentObject var listViewModel: ListViewModel
     @State var textFiledText: String = ""
+    @State var alertTitle: String = ""
+    @State var alertCheck: Bool = false
+
+
     
     var body: some View {
         ScrollView{
@@ -35,13 +39,35 @@ struct AddView: View {
             .padding(16)
         }
             .navigationTitle("Add Your Activity !")
+            .tint(Color.red)
+            .alert(isPresented: $alertCheck , content:getAlert)
     }
     
     //func addition
 func addition(){
-    listViewModel.addToItems(activites: textFiledText)
-    presentationModel.wrappedValue.dismiss()
+    
+    if textFiledValidation() {
+        listViewModel.addToItems(activites: textFiledText)
+        presentationModel.wrappedValue.dismiss()
+    }
 }
+    
+    //empty textfiled validation
+    func textFiledValidation() -> Bool {
+        if textFiledText.count < 3 {
+            alertTitle = "your new activity must be more than 3 charactars !".capitalized
+            alertCheck.toggle()
+            return false
+        }
+        return true
+    }
+    
+        //func Alert Title
+    func getAlert() -> Alert {
+        return Alert(title: Text(alertTitle))
+    }
+    
+    
     
 }
 
@@ -53,3 +79,4 @@ struct AddView_Previews: PreviewProvider {
         .environmentObject(ListViewModel())
     }
 }
+
