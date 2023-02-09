@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListRowView: View {
+    
     var items:ItemModel
     var body: some View {
         HStack(alignment: .top, spacing: 10){

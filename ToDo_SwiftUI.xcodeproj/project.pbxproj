@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3281F9A92994EB5A00CFEA84 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281F9A82994EB5A00CFEA84 /* ListViewModel.swift */; };
 		32B18B56299392E9000C1339 /* ToDo_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B18B55299392E9000C1339 /* ToDo_SwiftUIApp.swift */; };
 		32B18B5A299392EB000C1339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B18B59299392EB000C1339 /* Assets.xcassets */; };
 		32B18B5D299392EB000C1339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B18B5C299392EB000C1339 /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3281F9A82994EB5A00CFEA84 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		32B18B52299392E9000C1339 /* ToDo_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B18B55299392E9000C1339 /* ToDo_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_SwiftUIApp.swift; sourceTree = "<group>"; };
 		32B18B59299392EB000C1339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		32B18B6F2993DFEB000C1339 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3281F9A82994EB5A00CFEA84 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				32B18B6E2993B869000C1339 /* ItemModel.swift in Sources */,
 				32B18B6B29939CE6000C1339 /* AddView.swift in Sources */,
+				3281F9A92994EB5A00CFEA84 /* ListViewModel.swift in Sources */,
 				32B18B56299392E9000C1339 /* ToDo_SwiftUIApp.swift in Sources */,
 				32B18B652993935C000C1339 /* ListView.swift in Sources */,
 				32B18B672993956E000C1339 /* ListRowView.swift in Sources */,

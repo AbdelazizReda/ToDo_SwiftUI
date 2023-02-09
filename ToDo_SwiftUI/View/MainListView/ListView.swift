@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var items: [ItemModel] = [ItemModel(id: "2", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
-                                     ItemModel(id: "1", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
-                                     ItemModel(id: "3", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: false),
-                                     ItemModel(id: "6", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true)]
+    
+    @EnvironmentObject var listViewModel: ListViewModel
+//
+//    @State var items: [ItemModel] = [ItemModel(id: "2", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
+//                                     ItemModel(id: "1", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true),
+//                                     ItemModel(id: "3", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: false),
+//                                     ItemModel(id: "6", activitey: "orem Ipsum is simply dummy text of the printing and typesetting industry.", isCompleted: true)]
 
     
     var body: some View {
         //table
         List{
-            ForEach(items) { item in
+            ForEach(listViewModel.items) { item in
                 ListRowView(items: item)
             }
             //delete item
-            .onDelete(perform: deleteItem)
-            .onMove(perform:moveItem )
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform:listViewModel.moveItem)
         }
         .listStyle(PlainListStyle())
         //navigationConfugiers
@@ -32,15 +35,7 @@ struct ListView: View {
     
     
     
-        //delete item func
-    func deleteItem(indexSet:IndexSet){
-        items.remove(atOffsets: indexSet)
-    }
-    
-    //shifting item and remove by edite
-    func moveItem(from: IndexSet , to: Int){
-        items.move(fromOffsets: from, toOffset: to)
-    }
+
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -48,5 +43,6 @@ struct ListView_Previews: PreviewProvider {
         NavigationView{
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddView: View {
     
+    @Environment(\.presentationMode) var presentationModel
+    @EnvironmentObject var listViewModel: ListViewModel
     @State var textFiledText: String = ""
     
     var body: some View {
@@ -21,9 +23,7 @@ struct AddView: View {
                     .cornerRadius(15)
                 
                 //btn
-                Button {
-
-                } label: {
+                Button {addition() } label: {
                     Text("Save")
                 }
                 .frame(maxWidth: .infinity , minHeight: 50)
@@ -36,13 +36,20 @@ struct AddView: View {
         }
             .navigationTitle("Add Your Activity !")
     }
+    
+    //func addition
+func addition(){
+    listViewModel.addToItems(activites: textFiledText)
+    presentationModel.wrappedValue.dismiss()
+}
+    
 }
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             AddView()
-
         }
+        .environmentObject(ListViewModel())
     }
 }
